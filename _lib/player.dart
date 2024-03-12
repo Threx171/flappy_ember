@@ -17,7 +17,7 @@ class Player extends SpriteAnimationComponent
     position.x = size.x * 3;
     position.y = gameRef.size.y / 2;
     animation = await gameRef.loadSpriteAnimation(
-      'ember.png',
+      'bluebird.png',
       SpriteAnimationData.sequenced(
         amount: 3,
         textureSize: Vector2.all(16),

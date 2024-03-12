@@ -15,7 +15,7 @@ class Player extends SpriteAnimationComponent
   @override
   Future<void> onLoad() async {
     debugMode = true;
-    final image = await Flame.images.load('ember.png');
+    final image = await Flame.images.load('bluebird.png');
     add(CircleHitbox());
     animation = SpriteAnimation.fromFrameData(
       image,
