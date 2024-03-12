@@ -58,50 +58,7 @@ class FlappyEmber extends FlameGame with TapDetector, HasCollisionDetection {
 
   void initializeGame({required bool loadHud}) {
     // Initialize websocket
-    initializeWebSocket();
-  }
-
-  void initializeWebSocket() {
-    websocket = WebSocketsHandler();
-    websocket.connectToServer("localhost", 8888, serverMessageHandler);
-  }
-
-  void serverMessageHandler(String message) {
-    print("Message received: $message");
-    // Processar els missatges rebuts
-    final data = json.decode(message);
-
-    // Comprovar si 'data' és un Map i si 'type' és igual a 'data'
-    if (data is Map<String, dynamic>) {
-      if (data['type'] == 'welcome') {
-        initPlayer(data['id'].toString());
-      }
-      if (data['type'] == 'data') {
-        var value = data['value'];
-        if (value is List) {
-          //updateOpponents(value);
-        }
-      }
-    }
-  }
-
-  void initPlayer(String id) {
-    final List<String> randomNames = [
-      "Alice",
-      "Bob",
-      "Charlie",
-      "David",
-      "Eva",
-      "Frank",
-      "Grace",
-      "Hank",
-      "Ivy",
-      "Jack"
-    ];
-    final random = Random();
-    final randomName = randomNames[random.nextInt(randomNames.length)];
-
-    websocket.sendMessage('{"type": "init", "name": "$randomName", "}');
+    //initializeWebSocket();
   }
 
   @override
